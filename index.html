@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Fine-Tuner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                🧠 AIFine<span>Tune</span>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="active"><span class="icon">⚡</span> Experiments</a>
+                <a href="#"><span class="icon">📂</span> Datasets</a>
+                <a href="#"><span class="icon">🤖</span> Models Registry</a>
+                <a href="#"><span class="icon">⚙️</span> Compute</a>
+            </nav>
+            <div class="gpu-status">
+                <div class="gpu-header">
+                    <span>NVIDIA A100 (4x)</span>
+                    <span class="dot active"></span>
+                </div>
+                <div class="progress-bar"><div class="fill" style="width: 85%;"></div></div>
+                <div class="gpu-text">85% Utilization</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h2>Experiment: LLaMA-3 Medical Q&A</h2>
+                <div class="actions">
+                    <button class="btn-secondary">Stop Training</button>
+                    <button class="btn-primary">View Inference</button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Training Metrics -->
+                <div class="card metrics-card">
+                    <h3>Training Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="label">Epoch</span>
+                            <span class="value">14 / 20</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Learning Rate</span>
+                            <span class="value">2e-5</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Validation Loss</span>
+                            <span class="value highlight">0.842 <span class="trend down">↓</span></span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Est. Time Remaining</span>
+                            <span class="value">02h 45m</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loss Chart Simulation -->
+                <div class="card chart-card">
+                    <h3>Loss Curve</h3>
+                    <div class="chart-container">
+                        <!-- Simulated Chart using CSS -->
+                        <div class="chart-line train-loss"></div>
+                        <div class="chart-line val-loss"></div>
+                        <div class="legend">
+                            <span class="leg-item"><span class="dot train"></span> Training Loss</span>
+                            <span class="leg-item"><span class="dot val"></span> Validation Loss</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Config -->
+                <div class="card config-card">
+                    <h3>Hyperparameters</h3>
+                    <ul class="config-list">
+                        <li><span class="key">Base Model</span><span class="val">meta-llama/Llama-3-8b</span></li>
+                        <li><span class="key">Method</span><span class="val">LoRA (r=16, alpha=32)</span></li>
+                        <li><span class="key">Batch Size</span><span class="val">16</span></li>
+                        <li><span class="key">Optimizer</span><span class="val">AdamW (8-bit)</span></li>
+                        <li><span class="key">Quantization</span><span class="val">4-bit (NF4)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Live Logs -->
+                <div class="card logs-card">
+                    <h3>Output Console</h3>
+                    <div class="console">
+                        <p>Epoch 13/20: Train Loss: 0.891, Val Loss: 0.912</p>
+                        <p>Saving checkpoint to /models/run-14a/ckpt-13...</p>
+                        <p>Checkpoint saved.</p>
+                        <p class="active">Epoch 14/20: Batch 240/1000 - Loss: 0.842...</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
