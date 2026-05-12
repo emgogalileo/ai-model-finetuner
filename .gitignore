@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
-*.pth
+.venv/
+.env
+checkpoints/
+*.pkl
